@@ -14,6 +14,7 @@ body {
     > .breakout {
       grid-column: full;
       background: #a8fad5;
+
       > div {
         display: grid;
         grid-template-columns: 1fr 1fr;
