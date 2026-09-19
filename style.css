@@ -1,6 +1,6 @@
 html {
   color-scheme: light;
-
+  container: document / inline-size;
   &[data-theme="dark"] {
     color-scheme: dark;
   }
@@ -16,16 +16,13 @@ html {
 }
 
 article {
+  container: article / inline-size;
   padding: 1rlh;
   max-inline-size: 1200px;
   margin-inline: auto;
 
   display: grid;
   gap: 1.5rlh;
-
-  @media (width > 768px) {
-    grid-template-columns: 300px 1fr;
-  }
 
   p {
     font-size: 0.9rem;
@@ -34,10 +31,12 @@ article {
 }
 
 header {
+  container: header / inline-size;
   img {
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 1rem;
+    z-index: -1;
   }
 
   > div {
@@ -128,7 +127,6 @@ header {
 
 @layer {
   * {
-    corner-shape: squircle;
   }
 
   body {
@@ -160,5 +158,39 @@ button[data-theme-switcher] {
 
   &:active {
     scale: 0.98;
+  }
+}
+
+@container article (width < 550px) {
+  .wrapper {
+    grid-template-columns: min(auto-fit, 100%) 1fr;
+  }
+  .content {
+    margin-top: -100px;
+  }
+  img {
+    -webkit-mask-image: linear-gradient(black, transparent);
+    mask-image: linear-gradient(black, transparent);
+  }
+
+  .actions button {
+    width: 40%;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@container header (width >= 550px) {
+  .wrapper > div {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 1rem;
+  }
+}
+
+@container document (width > 768px) {
+  article {
+    grid-template-columns: 300px 1fr;
+    gap: 1rem;
   }
 }
