@@ -14,3 +14,20 @@
 body {
   font-family: system-ui, sans-serif;
 }
+
+article {
+  max-inline-size: 68ch;
+  margin-inline: auto;
+  padding: clamp(1rem, 0.8rem + 1cqi, 1.75rem);
+  --step--2: clamp(0.382rem, 0.0834rem + 0.9555vw, 0.8rem);
+  --step--1: clamp(0.618rem, 0.3452rem + 0.873vw, 1rem);
+  --step-0: clamp(1rem, 0.8214rem + 0.5714vw, 1.25rem);
+  --step-1: clamp(1.5625rem, 1.6576rem + -0.1269vw, 1.618rem);
+  --step-2: clamp(1.9531rem, 3.0928rem + -1.5195vw, 2.6179rem);
+  --step-3: clamp(2.4414rem, 5.5175rem + -4.1015vw, 4.2358rem);
+  --step-4: clamp(3.0518rem, 9.5691rem + -8.6898vw, 6.8535rem);
+  --step-5: clamp(3.8147rem, 16.2849rem + -16.627vw, 11.089rem);
+  --space-3: 0.5rlh;
+  --space-4: 0.75rlh;
+  --space-5: 1rlh;
+}
