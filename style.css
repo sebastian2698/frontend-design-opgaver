@@ -11,14 +11,10 @@
   --gray-900: #111827;
 }
 
-body {
-  font-family: system-ui, sans-serif;
-}
-
 article {
   max-inline-size: 68ch;
   margin-inline: auto;
-  padding: clamp(1rem, 0.8rem + 1cqi, 1.75rem);
+  padding: var(--space-6);
   --step--2: clamp(0.382rem, 0.0834rem + 0.9555vw, 0.8rem);
   --step--1: clamp(0.618rem, 0.3452rem + 0.873vw, 1rem);
   --step-0: clamp(1rem, 0.8214rem + 0.5714vw, 1.25rem);
@@ -30,4 +26,102 @@ article {
   --space-3: 0.5rlh;
   --space-4: 0.75rlh;
   --space-5: 1rlh;
+  --space-6: clamp(1rem, 0.8rem + 1cqi, 1.75rem);
+  font-family: system-ui, sans-serif;
+  > * {
+    margin: 0;
+  }
+  > * + * {
+    margin-top: var(--flow-space, 0.5rlh);
+  }
+}
+
+h1 {
+  color: var(--gray-900);
+  font-size: var(--step-3);
+  font-weight: bolder;
+}
+
+p {
+  color: var(--gray-600);
+  font-size: var(--step--1);
+  line-height: 1.6;
+}
+.text-lead {
+  --flow-space: var(--space-3);
+  font-size: var(--step-0);
+  color: var(--gray-900);
+  font-weight: lighter;
+}
+
+h1 + p {
+  --flow-space: var(--space-5);
+}
+.image {
+  font-size: var(--step-0);
+  font-weight: bold;
+}
+figure > * + * {
+  margin-top: 0.35rlh;
+}
+em {
+  font-size: var(--step-0);
+  font-weight: bolder;
+}
+
+h3 {
+  color: var(--gray-800);
+  font-size: var(--step-0);
+  font-weight: bold;
+  --flow-space: var(--space-3);
+}
+
+h2 {
+  font-size: var(--step-2);
+  font-weight: bolder;
+  line-height: 1.15;
+  color: var(--gray-900);
+}
+h2 + h3 {
+  --flow-space: var(--space-5);
+}
+
+p + h2 {
+  --flow-space: calc(var(--space-5) * 1.8);
+}
+
+figcaption {
+  color: var(--gray-500);
+  font-size: var(--step--2);
+  font-weight: bold;
+}
+
+h4 {
+  font-size: var(--step-0);
+  line-height: 1.45;
+  color: var(--gray-700);
+  font-weight: bolder;
+}
+
+code {
+  color: var(--gray-800);
+  font-family: var(--font-input, ui-monospace, monospace);
+  font-size: var(--step--2);
+  background: oklch(0.78 0.11 215);
+  border: 1px solid oklch(0.75 0.11 215);
+  border-radius: 0.35rem;
+  padding: 0.08em 0.35em;
+}
+
+.text-small {
+  font-size: var(--step--2);
+  color: var(--gray-700);
+  font-weight: bolder;
+  --flow-space: calc(var(--space-5) * 2);
+}
+
+a {
+  color: oklch(0.48 0.17 265);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
 }
