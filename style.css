@@ -178,6 +178,10 @@ button[data-theme-switcher] {
     justify-content: center;
     gap: 1rem;
   }
+  .album-details {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 @container header (width >= 550px) {
