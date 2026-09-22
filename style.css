@@ -10,6 +10,9 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
 }
+body {
+  background: var(--gray-100);
+}
 
 article {
   max-inline-size: 68ch;
@@ -27,6 +30,9 @@ article {
   --space-4: 0.75rlh;
   --space-5: 1rlh;
   --space-6: clamp(1rem, 0.8rem + 1cqi, 1.75rem);
+  background: var(--gray-50);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.05);
+  border-radius: 1rem;
   font-family: system-ui, sans-serif;
   > * {
     margin: 0;
