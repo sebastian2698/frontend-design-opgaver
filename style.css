@@ -57,6 +57,18 @@ main {
 }
 
 .action-card {
+  --color-accent-hover: oklch(from var(--color-accent) calc(l - 0.06) c h);
+
+  --color-accent-active: oklch(from var(--color-accent) calc(l - 0.12) c h);
+
+  --color-accent-muted: oklch(from var(--color-accent) 0.96 calc(c * 0.15) h);
+
+  --color-accent-border: oklch(from var(--color-accent) l calc(c * 0.5) h);
+
+  --color-accent-focus: oklch(from var(--color-accent) calc(l - 0.3) c h);
+
+  --color-accent-on-muted: oklch(from var(--color-accent) calc(l - 0.3) c h);
+
   &[data-theme="indigo"] {
     --color-accent: var(--color-indigo);
   }
@@ -65,12 +77,6 @@ main {
   }
 
   /* TODO: Afled disse tokens fra --color-accent med Relative Color Syntax. */
-  --color-accent-hover: ;
-  --color-accent-active: ;
-  --color-accent-muted: ;
-  --color-accent-border: ;
-  --color-accent-focus: ;
-  --color-accent-on-muted: ;
 
   padding: var(--space-xl);
   border: 2px solid var(--color-accent-border);
